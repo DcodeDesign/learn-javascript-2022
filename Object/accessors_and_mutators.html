@@ -1,0 +1,60 @@
+<html lang="en">
+    <head>
+        <title>Javascript: accessors and mutators</title>
+    </head>
+    <script>
+        /* ************* */
+        const user = {
+            firstname: 'Thomas',
+            lastname: 'Gravy',
+            full: function () {
+              return this.firstname + ' ' + this.lastname;
+            },
+            get fullName() {
+                return this.firstname + ' ' + this.lastname;
+            },
+            set fullName(value) {
+                [this.firstname, this.lastname] = value.split(' ');
+            }
+        }
+        console.log(user.full())
+        console.log(user.fullName)
+
+        user.fullName = 'Jean Dupont';
+        console.log(user.fullName);
+
+        const descriptor = Object.getOwnPropertyDescriptor(user, 'fullName');
+        console.log(descriptor)
+
+        /* ************* */
+        const object = {
+            firstname: 'Thomas',
+            lastname: 'Gravy',
+        }
+        Object.defineProperty(object, 'fullname', {
+            get() {
+                return this.firstname + ' ' + this.lastname;
+            },
+            set(value) {
+                [this.firstname, this.lastname] = value.split(' ');
+            }
+        })
+
+        /* ************* */
+        const preferences  = {
+            set locale(locale) {
+                this.historiqueLocale.push(locale);
+                this.localeActuelle = locale;
+            },
+            historiqueLocale: []
+        }
+
+        preferences.locale = 'fr-FR';
+
+        console.log(preferences.localeActuelle); // "fr-FR"
+        console.log(preferences.historiqueLocale); // ["fr-FR"]
+    </script>
+    <body>
+
+    </body>
+</html>

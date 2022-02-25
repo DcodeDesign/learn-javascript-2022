@@ -1,0 +1,5 @@
+# Project exclude paths
+/babel/dist/
+/babel/node_modules/
+/webpack/dist/
+/webpack/node_modules/

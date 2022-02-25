@@ -1,0 +1,48 @@
+<html lang="en">
+    <head>
+        <title>Javascript: accessors and mutators</title>
+    </head>
+    <script>
+        const MODULE = (function(){
+            const self = {};
+            const _variable = 10;
+
+            self.variable = "bonjour";
+
+            function _methode() {
+                console.log(this)
+                console.log('Je suis encapsulée !');
+            }
+            _methode()
+
+            self.methode = function(){
+                console.log('Je suis accessible !');
+            };
+
+            return self;
+        })();
+
+        MODULE.underModule = (function(){
+            return null;
+        })();
+
+        'use strict';
+        const App = App || {};
+
+        App.module = (function(self){
+
+            self.methode = function(){
+                // fonctions à ajouter au module
+            };
+
+
+            return self;
+        })(App.module || {});
+
+        export default App;
+
+    </script>
+    <body>
+
+    </body>
+</html>
