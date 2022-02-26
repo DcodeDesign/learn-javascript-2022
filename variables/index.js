@@ -32,10 +32,20 @@ let firstName = 'Jhon';
 {
     let lastName = 'Jhon';
 }
-console.log(lastName) // Uncaught ReferenceError: lastName is not defined
+// console.log(lastName) // Uncaught ReferenceError: lastName is not defined
 
 /**
  * const
  */
 
 const myConst = 'text'; // la déclaration doit s'accompagnée de son initialisation
+// myConst = 'text'; // Uncaught TypeError: Assignment to constant variable.
+
+const user = {
+    name: 'Jhon'
+}
+user.name = 'Jean'; // ok
+
+/* const user = user = {
+    name: 'Jhon'
+} */

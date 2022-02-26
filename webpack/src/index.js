@@ -1,3 +1,4 @@
+/*
 const App = App || {};
 
 App.module = (function(self){
@@ -9,3 +10,9 @@ App.module = (function(self){
 
     return self;
 })(App.module || {});
+ */
+
+const a = 'Tom';
+const b = 'Doe';
+let templateString = `${a} ${b}`;
+console.log(templateString);
