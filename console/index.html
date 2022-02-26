@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <script>
+      // .assert
+      let x = 5;
+      let y = 5;
+      const myObj = {firsname:"John", lastname:"Doe"};
+      console.assert(x + y === 11, myObj);
+
+      // .count
+      function greet() {
+         console.count(user);
+         return "hi " + user;
+      }
+
+      var user = "bob";
+      greet();
+      user = "alice";
+      greet();
+      greet();
+      console.count();
+
+      // .table
+      console.table(["apples", "oranges", "bananas"]);
+      console.table({test: 'test', test2: 'test2'});
+
+      // .time & .timeEnd
+      console.time("answer time");
+      alert("Click to continue");
+      console.timeLog("answer time");
+      alert("Do a bunch of other stuff...");
+      console.timeEnd("answer time");
+
+      //.trace
+      function foo() {
+         function bar() {
+            console.trace();
+         }
+         bar();
+      }
+
+      foo();
+
+      // .warn
+      const obj = {firstname:"John", lastname:"Doe"};
+      console.warn(obj);
+
+      //
+      console.log('%cconsole.log', 'color: gray;');
+      console.info('%cconsole.info', 'color: blue;');
+      console.debug('%cconsole.debug', 'color: green;');
+      console.warn('%cconsole.warn', 'color: orange;');
+      console.error('%cconsole.error', 'color: red;');
+
+      // .error
+      console.error(message)
+
+   </script>
+</head>
+<body>
+
+</body>
+</html>
